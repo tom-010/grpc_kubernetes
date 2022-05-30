@@ -6,4 +6,9 @@ metadata:
   name: go-grpc-greeter-server
 spec:
   ports:
-  - port: go-grpc-greeter-server
+  - port: 80
+    protocol: TCP
+    targetPort: 50051
+  selector:
+    app: go-grpc-greeter-server
+  type: ClusterIP
